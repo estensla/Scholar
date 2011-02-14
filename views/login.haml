@@ -1,0 +1,9 @@
+%h1 Feeling Friendly
+%form{:action => "/profile", :method => "post"}
+  %legend
+    A Username please
+  %p
+    %label{:for => ""} Username?
+    %input{:type => "textbox", :name => "profile", :id => "profile"}
+  %p
+    %input{:type => "submit", :value => "Submit!"}
