@@ -1,0 +1,17 @@
+curl -i -XPOST -d "email=estensla@yahoo.com" http://localhost:8180/notify
+
+
+http://www.mongodb.org/display/DOCS/Security+and+Authentication
+
+http://www.mongodb.org/display/DOCS/createCollection+Command
+
+sudo gem install mongo
+gem install bson_ext
+
+/home/erik/bin/mongodb/bin/mongod --dbpath /home/erik/workspace/scholar/db
+
+sudo ruby -rubygems database.rb -p 8180
+
+~/bin/mongodb/bin$ ./mongo
+
+
