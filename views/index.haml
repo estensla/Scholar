@@ -18,9 +18,18 @@
   
       #side_bar  
         %h1 Side Bar  
-        %p  
-          This is the side bar of the webpage  
-  
+        %form{:action => "/profile", :method => "post"}
+          %legend
+            A Username please
+          %p
+            %label{:for => ""} Username?
+            %input{:type => "textbox", :name => "profile", :id => "profile"}
+          %p
+            %label{:for => ""} Password?
+            %input{:type => "textbox", :name => "passwd", :id => "passwd"}
+          %p
+            %input{:type => "submit", :value => "Submit!"}  
+
       #footer  
         %p  
-          This is the footer.  
+          Welcome back #{session["user"]}  

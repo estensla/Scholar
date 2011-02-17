@@ -5,11 +5,15 @@ require 'mongo'
 require 'sass'
 require 'uri'
 
+
+enable :sessions
+
 get '/' do
-	haml:index
+    #session["user"] ||= nil
+    haml :index
 end
 
-get '/login' do
+get '/profile/login' do
   haml :login
 end
 
@@ -19,6 +23,7 @@ get '/stylesheet.css' do
 end
 
 post '/profile' do
+  session["user"] = params[:profile]
   @profile = params[:profile]
   @passwd = params[:passwd]
   db = Mongo::Connection.new("localhost", 27017).db("emails")
@@ -31,4 +36,10 @@ post '/profile' do
   else
   haml:profile
   end
+end
+
+get '/profile/logout' do
+  session[:user] = nil
+ # flash("Logout successful")
+  redirect '/'
 end
